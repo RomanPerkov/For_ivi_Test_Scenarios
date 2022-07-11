@@ -1,0 +1,94 @@
+2022-07-10 11:03:47 INFO  [main]: stga
+2022-07-10 11:04:28 INFO  [main]: stga
+2022-07-10 11:05:19 INFO  [main]: stga
+2022-07-10 11:06:24 INFO  [main]: stga
+2022-07-10 11:07:24 INFO  [main]: stga
+2022-07-10 11:11:15 INFO  [main]: stga
+2022-07-10 12:28:46 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:28:53 INFO  [main]: есть совпадение
+2022-07-10 12:28:53 INFO  [main]: есть совпадение
+2022-07-10 12:28:53 INFO  [main]: есть совпадение
+2022-07-10 12:28:53 INFO  [main]:  Найдено 3 совпадения
+2022-07-10 12:28:53 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:32:13 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:32:20 INFO  [main]: есть совпадение
+2022-07-10 12:32:20 INFO  [main]: есть совпадение
+2022-07-10 12:32:20 INFO  [main]: есть совпадение
+2022-07-10 12:32:20 INFO  [main]:  Найдено 3 совпадения
+2022-07-10 12:32:31 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:33:07 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:33:13 INFO  [main]: есть совпадение
+2022-07-10 12:33:13 INFO  [main]: есть совпадение
+2022-07-10 12:33:13 INFO  [main]: есть совпадение
+2022-07-10 12:33:13 INFO  [main]:  Найдено 3 совпадения
+2022-07-10 12:33:24 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:36:24 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:36:30 INFO  [main]: есть совпадение
+2022-07-10 12:36:30 INFO  [main]: есть совпадение
+2022-07-10 12:36:30 INFO  [main]: есть совпадение
+2022-07-10 12:36:30 INFO  [main]:  Найдено 3 совпадения
+2022-07-10 12:36:40 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:38:02 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:38:08 INFO  [main]: есть совпадение
+2022-07-10 12:38:08 INFO  [main]: есть совпадение
+2022-07-10 12:38:09 INFO  [main]: есть совпадение
+2022-07-10 12:38:09 INFO  [main]:  Найдено 3 совпадения
+2022-07-10 12:38:19 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:38:57 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 12:39:04 INFO  [main]: есть совпадение
+2022-07-10 12:39:04 INFO  [main]: есть совпадение
+2022-07-10 12:39:04 INFO  [main]: есть совпадение
+2022-07-10 12:39:04 INFO  [main]:  Найдено 3 совпадения
+2022-07-10 12:39:18 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-10 17:23:56 INFO  [main]: Рейтинг по элементу https://play.google.com/store/apps/details?id=ru.ivi.client&hl=ru&gl=US не совпадает
+2022-07-10 17:31:09 INFO  [main]: Рейтинг по элементу https://play.google.com/store/apps/details?id=ru.ivi.client&hl=ru&gl=US не совпадает
+2022-07-10 17:33:09 INFO  [main]: Рейтинг по элементу https://play.google.com/store/apps/details?id=ru.ivi.client&hl=ru&gl=US не совпадает
+2022-07-10 17:45:52 INFO  [main]: Рейтинг по элементу https://play.google.com/store/apps/details?id=ru.ivi.client&hl=ru&gl=US не совпадает
+2022-07-10 17:49:08 INFO  [main]: Рейтинг по элементу https://play.google.com/store/apps/details?id=ru.ivi.client&hl=ru&gl=US не совпадает
+2022-07-10 17:51:06 INFO  [main]: Рейтинг по элементу https://play.google.com/store/apps/details?id=ru.ivi.client&hl=ru&gl=US совпадает
+2022-07-11 11:00:01 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-11 11:00:09 INFO  [main]: есть совпадение
+2022-07-11 11:00:09 INFO  [main]: есть совпадение
+2022-07-11 11:00:12 INFO  [main]: есть совпадение
+2022-07-11 11:00:12 INFO  [main]:  Найдено 3 совпадения
+2022-07-11 11:00:12 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-11 14:33:49 INFO  [main]: На странице 01 найдено 0 ссылок на статью в Wiki
+2022-07-11 14:34:02 INFO  [main]: На странице 11 найдено 0 ссылок на статью в Wiki
+2022-07-11 14:34:14 INFO  [main]: На странице 21 найдено 0 ссылок на статью в Wiki
+2022-07-11 14:34:26 INFO  [main]: На странице 31 найдено 0 ссылок на статью в Wiki
+2022-07-11 14:34:31 INFO  [main]: Ссылка на официальный сайт ivi присутствует
+2022-07-11 14:45:09 INFO  [main]: Рейтинг по 3 - му  элементу на странице 1 совпадает
+2022-07-11 14:51:59 INFO  [main]: Рейтинг по 3 - му  элементу на странице 1 совпадает
+2022-07-11 15:39:30 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-11 15:43:40 INFO  [main]: Start findThreeImagesAndThreeHrefInSearchForm()
+2022-07-11 15:45:18 INFO  [main]: есть совпадение
+2022-07-11 15:45:18 INFO  [main]: есть совпадение
+2022-07-11 15:45:21 INFO  [main]: есть совпадение
+2022-07-11 15:45:21 INFO  [main]:  Найдено 3 совпадения
+2022-07-11 15:45:21 INFO  [main]: End findThreeImagesAndThreeHrefInSearchForm()
+2022-07-11 16:00:04 INFO  [main]: Старт третьего сценария
+2022-07-11 16:00:25 INFO  [main]: На странице 1 найдено 2 ссылок на статью в Wiki
+2022-07-11 16:00:28 INFO  [main]: На странице 2 найдено 2 ссылок на статью в Wiki
+2022-07-11 16:00:41 INFO  [main]: На странице 3 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:00:54 INFO  [main]: На странице 4 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:00:59 INFO  [main]: Ссылка на официальный сайт ivi присутствует
+2022-07-11 16:03:37 INFO  [main]: Старт третьего сценария
+2022-07-11 16:04:01 INFO  [main]: На странице 1 найдено 2 ссылок на статью в Wiki
+2022-07-11 16:04:05 INFO  [main]: На странице 2 найдено 2 ссылок на статью в Wiki
+2022-07-11 16:04:18 INFO  [main]: На странице 3 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:04:31 INFO  [main]: На странице 4 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:04:36 INFO  [main]: Ссылка на официальный сайт ivi присутствует
+2022-07-11 16:06:53 INFO  [main]: Старт третьего сценария
+2022-07-11 16:07:33 INFO  [main]: На странице 1 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:07:48 INFO  [main]: На странице 2 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:08:00 INFO  [main]: На странице 3 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:08:12 INFO  [main]: На странице 4 найдено 1 ссылок на статью в Wiki
+2022-07-11 16:08:18 INFO  [main]: Ссылка на официальный сайт ivi присутствует
+2022-07-11 16:10:38 INFO  [main]: Старт третьего сценария
+2022-07-11 16:11:00 INFO  [main]: На странице 1 найдено 2 ссылок на статью в Wiki
+2022-07-11 16:11:18 INFO  [main]: На странице 2 найдено 0 ссылок на статью в Wiki
+2022-07-11 16:11:30 INFO  [main]: На странице 3 найдено 0 ссылок на статью в Wiki
+2022-07-11 16:11:42 INFO  [main]: На странице 4 найдено 0 ссылок на статью в Wiki
+2022-07-11 16:11:49 INFO  [main]: Ссылка на официальный сайт ivi присутствует
+2022-07-11 17:29:33 INFO  [main]: Старт второго сценария
+2022-07-11 17:32:20 INFO  [main]: Старт второго сценария
