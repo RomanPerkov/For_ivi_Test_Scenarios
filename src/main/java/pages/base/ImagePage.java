@@ -39,13 +39,13 @@ public class ImagePage extends GoogleHomePage {
 
         int count = 0;                                          // счетчик совпадений
 
-        for (int i = 0; i < 10; i++) {                                                       // цикл прокручивает страницу вниз для загрузки дополнительных картинок
-            JavascriptExecutor jse = (JavascriptExecutor) driver;                               // используем объект ДжаваСкрипт для скролла страницы вниз
-            jse.executeScript("window.scrollBy(0,50000)", "");
-
+        for (int i = 0; i < 5; i++) {                                                       // цикл прокручивает страницу вниз для загрузки дополнительных картинок
             try {
-                driver.findElement(BUTTON_SHOW_MORE).click();               // клик если кнопка показать больше сама не нажалась
+                Thread.sleep(1000);
+                JavascriptExecutor jse = (JavascriptExecutor) driver;                               // используем объект ДжаваСкрипт для скролла страницы вниз
+                jse.executeScript("window.scrollBy(0,50000)", "");
             } catch (Exception e) {
+
                 break;                          // если кнопки нет , цикл прекращается
             }
 

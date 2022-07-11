@@ -66,7 +66,11 @@ public class GoogleHomePage {
      * и окно политики не высвечивается, метод в тесте необходимо отключить(закоментить)
      */
     public void cancelPoliticy() {
-        driver.findElement(GOOGLE_POLITIC).click();
+        try {
+            driver.findElement(GOOGLE_POLITIC).click();
+        } catch (NoSuchElementException e) {
+
+        }
     }
 
 
@@ -107,7 +111,7 @@ public class GoogleHomePage {
                     }
                 }
             }
-            System.out.println(i);
+
             driver.findElement(NEXT_BUTTON).click();          // нажимаем на кнопку следущая  для повторения цикла на след странице
         }
 

@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
@@ -34,8 +33,8 @@ public class Clients_Factory {
             case "SAFARI":
                 WebDriverManager.safaridriver().setup();
                 driver = new SafariDriver();
-                //default:
-                //Assertions.fail("INCORECT BROWSER NAME " + BROWSER_AND_PLATFORM);
+                default:
+                Assertions.fail("INCORECT BROWSER NAME " + BROWSER_AND_PLATFORM);
         }
         driver.manage().window().maximize();    // разворачивание окна браузера на весь экран
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));   // для новосозданного вебдрайвера устанавливаем время ожидания
