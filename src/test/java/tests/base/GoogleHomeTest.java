@@ -2,7 +2,9 @@ package tests.base;
 
 import common.Clients_Factory;
 import org.apache.log4j.Logger;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pages.base.GoogleHomePage;
 import pages.base.ImagePage;
@@ -25,8 +27,15 @@ public class GoogleHomeTest {
     protected ivisInwikiPage ivisInwikiPage = new ivisInwikiPage(driver);
 
 
+    @AfterEach
+    void closeDriver() {                // закрытие драйвера после теста
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
+
     /**
-     *
      * Тестовый сценарий 1
      * неавторизованный пользователь заходит в https://www.google.com/
      * ищет ivi
@@ -35,7 +44,7 @@ public class GoogleHomeTest {
      * убеждается, что не менее 3 картинок в выдаче ведут на сайт ivi.ru
      */
     @Test
-    public void oneCase()  {
+    public void oneCase() {
         logger.info("Старт певрого сценария");
         googleHomePage.goToUrl(GOOGLE_HOME_PAGE);                                                               // переход на Google
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT); // ввод запроса и ввод
@@ -50,11 +59,11 @@ public class GoogleHomeTest {
      * убеждается, что рейтинг приложения на кратком контенте страницы совпадает с рейтингом при переходе
      */
     @Test
-    public void twoCase() {
+    public void twoCase() {                                                                 //ВНИМАНИЕ: запускать с включенным ВПН
         logger.info("Старт второго сценария");
         String originalRaiting = ivisGooglePlayMarketPage.originalRaiting();                                               //переход на страницу приложения ivi в Google
         googleHomePage.goToUrl(GOOGLE_HOME_PAGE);                                                                   // переход на страницу Google
-        googleHomePage.cancelPoliticy();                                                                            //  (если нет окна политики строку нужно закоментировать)
+        googleHomePage.cancelPoliticy();                                                                            //  (если нет окна политики строка пропускается методом)
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT);    // ввод запроса и ввод
         googleHomePage.searchRateInPlayGoogle(originalRaiting);                                                     // просматривает первые 5 страницй поиска и ищет ссылки на приложение в ivi , сравнивает
     }
@@ -67,7 +76,7 @@ public class GoogleHomeTest {
      * убеждается, что в статье есть ссылка на официальный сайт ivi.ru
      */
     @Test
-    public void threeCase(){
+    public void threeCase() {
         logger.info("Старт третьего сценария");
         googleHomePage.goToUrl(GOOGLE_HOME_PAGE);                                                               //переход на страницу Google
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT); // ввод запроса и ввод

@@ -10,6 +10,6 @@ public class Config {
      *        MOZILLA      браузер фаерфокс
      *        OPERA         браузер OPERA
      */
-    public static final String BROWSER_AND_PLATFORM="MOZILLA";
+    public static final String BROWSER_AND_PLATFORM="CHROME";
 
 }
