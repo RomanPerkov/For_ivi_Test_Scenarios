@@ -1,7 +1,6 @@
 package pages.base;
 
 import org.openqa.selenium.WebDriver;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,13 +8,16 @@ import static constants.Constants.Urls.URL_IVI_IN_GOOGLE_PLAY;
 
 public class ivisGooglePlayMarketPage extends GoogleHomePage {
 
-
+    /**
+     * Класс содержит константы и методы исаользуесмые на старнице приложения ivi в Play Market
+     * @param driver
+     */
     public ivisGooglePlayMarketPage(WebDriver driver) {
         super(driver);
     }
 
     /**
-     * Метод считывает рейтинг с Google Play для последующего сравнению с этим значением
+     * Метод считывает рейтинг с Google Play для последующего сравнения с этим значением
      */
     public String originalRaiting() {
         goToUrl(URL_IVI_IN_GOOGLE_PLAY);                                                            // переход в Google Play может потребоваться ВПН

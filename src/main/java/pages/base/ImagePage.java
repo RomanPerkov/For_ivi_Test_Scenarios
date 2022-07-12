@@ -3,20 +3,20 @@ package pages.base;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
-
 import java.util.List;
 
 import static constants.Constants.Size.*;
 import static constants.Constants.Urls.URL_COMPARSION;
 
 
+/**
+ * Класс содержит константы и методы используемые в результатах поиска, вкладка картинки, Google
+ */
 public class ImagePage extends GoogleHomePage {
 
     protected final static Logger logger = Logger.getLogger(ImagePage.class);
 
     public static final By ALL_IMAGE_LIST = By.xpath("//div[@jsname='N9Xkfe'][not(@jscontroller='ewR3bd')]"); // путь к каждой картинке в выдаче
-
-    public static final By BUTTON_SHOW_MORE = By.xpath("//input[@jsaction='Pmjnye']");              // путь к  кнопке показать больше
 
     public final static By HREF = By.xpath("//div[@jsname='N9Xkfe'][not(@jscontroller='ewR3bd')]/a[2]");//путь к каждому элементу содержащему ссылку(является родственником ALL_IMAGE_LIST)
 
@@ -45,10 +45,8 @@ public class ImagePage extends GoogleHomePage {
                 JavascriptExecutor jse = (JavascriptExecutor) driver;                               // используем объект ДжаваСкрипт для скролла страницы вниз
                 jse.executeScript("window.scrollBy(0,50000)", "");
             } catch (Exception e) {
-
                 break;                          // если кнопки нет , цикл прекращается
             }
-
 
         }
 
@@ -82,7 +80,7 @@ public class ImagePage extends GoogleHomePage {
             Assertions.fail("Не найдено нужного количества элементов на странице");
 
         }
-        logger.info("Конец сценария");
+
 
 
     }

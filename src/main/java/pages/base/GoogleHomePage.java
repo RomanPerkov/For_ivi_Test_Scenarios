@@ -1,8 +1,6 @@
 package pages.base;
-
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
-
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,9 +8,13 @@ import java.util.regex.Pattern;
 
 import static constants.Constants.Urls.URL_IVI_IN_GOOGLE_PLAY;
 
+
+/**
+ * Класс содержит константы и методы используемые в домашней стринице Google
+ */
 public class GoogleHomePage {
 
-    public WebDriver driver;
+    protected WebDriver driver;
 
     public GoogleHomePage(WebDriver driver) {
         this.driver = driver;
@@ -25,8 +27,9 @@ public class GoogleHomePage {
     public static final By NEXT_BUTTON = By.xpath("//span[contains(text(),'Следующая')]/parent::a");                    // для пориска кнопки Следующая для перехода на след страницу результатов поиска
     public static final By RATE_IN_GOOGLE_PLAY = By.xpath("//div[@class='TT9eCd']");                                    // для поиска элемента с рейтингом на страницу Google Play приложения ivi
     public static final By GOOGLE_POLITIC = By.xpath("//div[@class='QS5gu sy4vM'][contains(text(),'Отклонить все')]"); // для поиска кнопки отмены предлагаемой политики Google
-    public static final By IVIS_HREF_ON_WIKI_IN_SEARCH_RESULT = By.xpath("//a[@href='https://ru.wikipedia.org/wiki/Ivi.ru']");  // для поиска элементов содержащих ссылки на стать в вики по ivi
-//"//a[@href='https://ru.wikipedia.org/wiki/Ivi.ru']/parent::div/parent::div/parent::div/parent::div/parent::div[@class='yuRUbf']"
+    public static final By IVIS_HREF_ON_WIKI_IN_SEARCH_RESULT = By.xpath("//a[@href='https://ru.wikipedia.org/wiki/Ivi.ru']");  // для поиска элементов содержащих ссылки на статью в вики по ivi
+    public static final By SEARCH_LINE = By.xpath("//input[@class='gLFyf gsfi']"); // путь поисковой строки на главной странице гугл
+    public static final By IMAGE_BUTTON = By.xpath("//a[contains(text(),'Картинки')]"); // путь кнопки картинки под поисковой строкой после поиска в гугл
     /**
      * Переходит на URL
      */
@@ -60,10 +63,8 @@ public class GoogleHomePage {
 
 
     /**
-     * Метод убирает окно политики Google
-     * Для выполнения тестового сценария 2 необходимо зайти на страницу приложения  ivi в Google Play
-     * для нормального подключения требуется использовать ВПН , если на страницу можно зайти без ВПН
-     * и окно политики не высвечивается, метод в тесте необходимо отключить(закоментить)
+     * Метод создан для того, что бы убирать окно политики Google
+     * Если окно политики не высвечивается , ничего не происходит
      */
     public void cancelPoliticy() {
         try {
@@ -74,25 +75,22 @@ public class GoogleHomePage {
     }
 
 
-
-
-
     /**
      * Этот метод ищет на первых 5 страницах результатов поиска
      * рейтинг ivi в кратком содержании страницы.
      * Принцип поиска заключается в поиске элементов рейтинга в кратком содержании и посика элементов ссылок.
-     * Элемент ссылок находится как родительский от элемента рейтинга( если нет элемента рейтинга, то и не будет найден элемент ссылка)
+     * Элемент ссылок находится как рдственный от элемента рейтинга( если нет элемента рейтинга, то и не будет найден элемент ссылка)
      * создается 2 коллекции, в коллекции rateElement хранятся найденные элементы ссылок
-     * в коллекции rateElementHref хранятся элементы ссылок
+     * в коллекции rateElementHref хранятся элементы ссылок.
      * Создается цикл c проходом по коллекциям,сравниваются пары элементов, внутри  цикла стоит if
      * если ссылка элемента рейтинга совпадает с адресом с Google Play приложения ivi
      * то происходит сравнение рейтинга переданного в параметры метода с рейтингом полученного из элемента краткого содержания страницы
-     * далее логируются результаты сравнения
      * цикл завершается, жмется кнопка перехода на след страницу результатов
      */
 
     public void searchRateInPlayGoogle(String raiting) {
-        for (int i = 0; i < 4; i++) {                                               // цикл перелистывания страниц результатаа поиска
+        for (int i = 0; i < 5; i++) {                                               // цикл перелистывания страниц результатаа поиска
+            logger.info("Захожу на страницу " + (i + 1));
             List<WebElement> rateElement = driver.findElements(RATE_ELEMENT);       //ищет элемент рейтинг в результатх поиска
             List<WebElement> rateElementHref = driver.findElements(RATE_ELEMENT_HREF);  //ищет элемент ссылку
             for (int j = 0; j < rateElement.size() - 1; j++) {                          // начинает цикл прохода по коллекции
@@ -118,16 +116,12 @@ public class GoogleHomePage {
     }
 
 
-
-
-
-
     /**
      * Этот метод проверяет есть ли в результатах поиска ссылки ведущие на статью d Wiki про ivi
      */
     public void searchIVIsHrefInGoogleSearch() {
-        for (int i = 0; i < 4; i++) {                   // в цикле ведем поиск на каждой странице результата
-            List<WebElement> rateElementHref = driver.findElements(IVIS_HREF_ON_WIKI_IN_SEARCH_RESULT);                 //если элементов не найдено, то коллекция будет пуста
+        for (int i = 0; i < 5; i++) {                   // в цикле ведем поиск на каждой странице результата
+            List<WebElement> rateElementHref = driver.findElements(IVIS_HREF_ON_WIKI_IN_SEARCH_RESULT);//если элементов не найдено, то коллекция будет пуста
             logger.info("На странице " + (i + 1) + " найдено " + rateElementHref.size() + " ссылок на статью в Wiki");  // если будут найдены элементы , то выведет на какой странице и сколько найдено
             driver.findElement(NEXT_BUTTON).click();                                                    // нажимает на кнопку след страницы
         }

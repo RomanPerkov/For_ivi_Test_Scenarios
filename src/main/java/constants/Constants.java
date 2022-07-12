@@ -12,8 +12,6 @@ public class Constants {
 
 
 
-    public static final By SEARCH_LINE = By.xpath("//input[@class='gLFyf gsfi']"); // путь поисковой строки на главной странице гугл
-    public static final By IMAGE_BUTTON = By.xpath("//div[@class='hdtb-mitem'][3]/a"); // путь кнопки картинки под поисковой строкой после поиска в гугл
 
     /**
      * В этом классе хранятся переменные ожиданий
