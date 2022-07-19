@@ -1,0 +1,12 @@
+pages\base\ImagePage.class
+common\Config.class
+pages\base\ivisGooglePlayMarketPage.class
+constants\Constants$Urls.class
+constants\Constants$Texts.class
+pages\base\SuperPage.class
+pages\base\GoogleHomePage.class
+constants\Constants$Size.class
+common\Clients_Factory.class
+constants\Constants$TimeOutVariables.class
+pages\base\ivisInwikiPage.class
+constants\Constants.class

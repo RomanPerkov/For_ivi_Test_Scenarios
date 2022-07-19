@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Класс содержит константы и методы исаользуесмые на старнице статьи в Wiki про ivi
  */
-public class ivisInwikiPage extends GoogleHomePage {
+public class ivisInwikiPage extends SuperPage {
 
     public ivisInwikiPage(WebDriver driver) {
         super(driver);
@@ -19,12 +19,15 @@ public class ivisInwikiPage extends GoogleHomePage {
     /**
      * Метод проверяет есть ли в статье про ivi ссылка на оф сайт ivi
      */
-    public void isThereALinkOnIvi() {
+    public boolean isThereALinkOnIvi() {
         if (driver.findElements(IVI_HREF_ON_WIKI).size() > 0) {              // поиск ссылки, если коллекция не пуста, значит на сайте присутствует ссылка на ivi
             logger.info("Ссылка на официальный сайт ivi присутствует");
+            return true;
         } else {
-            Assertions.fail();
             logger.info("Ссылка не найдена");
+            Assertions.fail();
+            return false;
+
         }
 
     }

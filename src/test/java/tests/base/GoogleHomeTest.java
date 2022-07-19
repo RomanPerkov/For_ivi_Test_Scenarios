@@ -1,15 +1,13 @@
 package tests.base;
 
 import common.Clients_Factory;
+import dev.failsafe.internal.util.Assert;
 import org.apache.log4j.Logger;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import pages.base.GoogleHomePage;
-import pages.base.ImagePage;
-import pages.base.ivisGooglePlayMarketPage;
-import pages.base.ivisInwikiPage;
+import pages.base.*;
 
 
 import static constants.Constants.Texts.GOOGLE_SEARCH_TEXT;
@@ -22,6 +20,7 @@ public class GoogleHomeTest {
     protected final static Logger logger = Logger.getLogger(GoogleHomeTest.class);
 
     protected WebDriver driver = Clients_Factory.createDriver();
+    protected SuperPage superPage = new SuperPage(driver);
     protected GoogleHomePage googleHomePage = new GoogleHomePage(driver);
     protected ImagePage imagePage = new ImagePage(driver);
     protected ivisGooglePlayMarketPage ivisGooglePlayMarketPage = new ivisGooglePlayMarketPage(driver);
@@ -52,7 +51,7 @@ public class GoogleHomeTest {
         googleHomePage.cancelPoliticy();                                                                            //  (если нет окна политики строка пропускается методом)
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT); // ввод запроса и ввод
         googleHomePage.clickElement(googleHomePage.checkElementIsVisible(IMAGE_BUTTON));                        // клик по элементу картинки
-        imagePage.findThreeImagesAndThreeHrefInSearchForm();                                                    // анализ картинок
+        Assert.isTrue(imagePage.findThreeImagesAndThreeHrefInSearchForm(), "Не найдено нужного количества элементов на странице");// анализ картинок
         logger.info("Конец первого сценария");
     }
 
@@ -69,7 +68,8 @@ public class GoogleHomeTest {
         googleHomePage.goToUrl(GOOGLE_HOME_PAGE);                                                                   // переход на страницу Google
         googleHomePage.cancelPoliticy();                                                                            //  (если нет окна политики строка пропускается методом)
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT);    // ввод запроса и ввод
-        googleHomePage.searchRateInPlayGoogle(originalRaiting);                                                     // просматривает первые 5 страницй поиска и ищет ссылки на приложение в ivi , сравнивает
+        Assertions.assertEquals(googleHomePage.searchRateInPlayGoogle(originalRaiting), originalRaiting);// просматривает первые 5 страницй поиска и ищет ссылки на приложение в ivi , сравнивает
+        // если рейтинг найден и не совпадает с Google Play выброс fail, если не найдено элементов ведущих Google Play выброс fail ( так как в самом методе(searchRateInPlayGoogle()) дефолтное значение рейтинга 0.0)
         logger.info("Конец второго сценария");
     }
 
@@ -86,11 +86,10 @@ public class GoogleHomeTest {
         googleHomePage.goToUrl(GOOGLE_HOME_PAGE);                                                               //переход на страницу Google
         googleHomePage.cancelPoliticy();                                                                            //  (если нет окна политики строка пропускается методом)
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT); // ввод запроса и ввод
-        googleHomePage.searchIVIsHrefInGoogleSearch();                                                            // поиск ссылок на сатью в вики про ivi
-        logger.info("Захожу на страницу Wiki про ivi");
+        Assertions.assertNotEquals(googleHomePage.searchIVIsHrefInGoogleSearch(), 0);// поиск ссылок на сатью в вики про ivi, если ссылок не найдено fail
         googleHomePage.goToUrl(URL_IVI_IN_WIKI);                                                                // переход на статью в ivi из константы
-        ivisInwikiPage.isThereALinkOnIvi();
-        logger.info("Конец второго сценария");                                                                  // проверка на наличие ссылки на сайт ivi
+        Assert.isTrue(ivisInwikiPage.isThereALinkOnIvi(), "Ссылка не найдена");
+        logger.info("Конец третьего сценария");                                                                  // проверка на наличие ссылки на сайт ivi
     }
 
 

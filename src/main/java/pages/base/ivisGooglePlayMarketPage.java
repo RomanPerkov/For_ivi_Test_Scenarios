@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 import static constants.Constants.Urls.URL_IVI_IN_GOOGLE_PLAY;
 
-public class ivisGooglePlayMarketPage extends GoogleHomePage {
+public class ivisGooglePlayMarketPage extends SuperPage {
 
     /**
      * Класс содержит константы и методы исаользуесмые на старнице приложения ivi в Play Market

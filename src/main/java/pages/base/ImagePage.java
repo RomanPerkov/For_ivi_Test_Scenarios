@@ -12,9 +12,9 @@ import static constants.Constants.Urls.URL_COMPARSION;
 /**
  * Класс содержит константы и методы используемые в результатах поиска, вкладка картинки, Google
  */
-public class ImagePage extends GoogleHomePage {
+public class ImagePage extends SuperPage {
 
-    protected final static Logger logger = Logger.getLogger(ImagePage.class);
+
 
     public static final By ALL_IMAGE_LIST = By.xpath("//div[@jsname='N9Xkfe'][not(@jscontroller='ewR3bd')]"); // путь к каждой картинке в выдаче
 
@@ -35,9 +35,11 @@ public class ImagePage extends GoogleHomePage {
      * то счетчик совпадений count увеличивается на 1.
      * В случае , если нужное количесвто элементов не было найдено , выбрасывается Assertion.fail()
      */
-    public void findThreeImagesAndThreeHrefInSearchForm() {
+    public boolean findThreeImagesAndThreeHrefInSearchForm() {
 
         int count = 0;                                          // счетчик совпадений
+        boolean forAssert = false;
+
 
         for (int i = 0; i < 5; i++) {                                                       // цикл прокручивает страницу вниз для загрузки дополнительных картинок
             try {
@@ -68,7 +70,10 @@ public class ImagePage extends GoogleHomePage {
 
             if (count > 2) {                                                    // проверка количества совпадений, если совпадений 3 и более происходит остановка цикла
                 logger.info(" Найдено 3 совпадения");
+                forAssert = true;
                 break;
+
+
 
             }
 
@@ -77,12 +82,14 @@ public class ImagePage extends GoogleHomePage {
 
         if (count < 3) {                                                        // если по завершению цикла не найдено 3 совпадений выбрасывается провал теста
             logger.info("Не найдено нужного количества элементов");
-            Assertions.fail("Не найдено нужного количества элементов на странице");
+            forAssert = true;
+            return forAssert;
+            //Assertions.fail("Не найдено нужного количества элементов на странице");
 
         }
 
 
-
+        return forAssert;
     }
 
 
