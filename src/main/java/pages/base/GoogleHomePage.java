@@ -110,7 +110,7 @@ public class GoogleHomePage extends SuperPage {
                     logger.info("На странице " + (i + 1) + " элемент " + (j + 1) + " не ведет в Google Play");
                 }
             }
-
+            logger.info("Перелистываю страницу");
             driver.findElement(NEXT_BUTTON).click();  // нажимаем на кнопку следущая  для повторения цикла на след странице
 
         }
@@ -135,6 +135,7 @@ public class GoogleHomePage extends SuperPage {
             } else {
                 logger.info("На странице " + (i + 1) + " не найдено  ссылок на статью в Wiki");
             }
+            logger.info("Перелистываю страницу");
             driver.findElement(NEXT_BUTTON).click();                                                    // нажимает на кнопку след страницы
         }
         if (countHfref == 0) {

@@ -88,8 +88,8 @@ public class GoogleHomeTest {
         googleHomePage.textEnterAndClick(googleHomePage.checkElementIsVisible(SEARCH_LINE), GOOGLE_SEARCH_TEXT); // ввод запроса и ввод
         Assertions.assertNotEquals(googleHomePage.searchIVIsHrefInGoogleSearch(), 0);// поиск ссылок на сатью в вики про ivi, если ссылок не найдено fail
         googleHomePage.goToUrl(URL_IVI_IN_WIKI);                                                                // переход на статью в ivi из константы
-        Assert.isTrue(ivisInwikiPage.isThereALinkOnIvi(), "Ссылка не найдена");
-        logger.info("Конец третьего сценария");                                                                  // проверка на наличие ссылки на сайт ivi
+        Assert.isTrue(ivisInwikiPage.isThereALinkOnIvi(), "Ссылка не найдена");         // проверка на наличие ссылки на сайт ivi
+        logger.info("Конец третьего сценария");
     }
 
 

@@ -1,17 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tests.base.GoogleHomeTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 198.7 s <<< FAILURE! - in tests.base.GoogleHomeTest
-twoCase  Time elapsed: 43.266 s  <<< ERROR!
-org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='TT9eCd']"}
-  (Session info: chrome=103.0.5060.114)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.1.3', revision: '7b1ebf28ef'
-System info: host: 'DESKTOP-8IIAE9M', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_322'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0c18d9c654cc2c1d5b71d0c655840591, findElement {using=xpath, value=//div[@class='TT9eCd']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\El_Chupa\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50407}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50407/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0c18d9c654cc2c1d5b71d0c655840591
-	at tests.base.GoogleHomeTest.twoCase(GoogleHomeTest.java:67)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 192.87 s - in tests.base.GoogleHomeTest

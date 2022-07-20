@@ -1,1 +1,0 @@
-{"uuid":"ce6041ed-274c-4bfc-845b-b8d6f5e44f7b","name":"twoCase()","children":["547cfd05-84eb-4776-b0d4-98d1deb7595e"],"befores":[],"afters":[{"name":"closeDriver","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1658242427028,"stop":1658242428645}],"links":[],"start":1658242385458,"stop":1658242428678}

@@ -56,4 +56,10 @@ OPERA         браузер опера
 Находится log4j.properties
 Файл содержит настройки логгера.
 
-логи сохраняются в корень проекта
+логи сохраняются в корень проекта.
+
+В проекте используется allure
+результаты тестов в JSON хранятся по адресу \For_ivi_Test_Scenarios\target\allure-results
+https://github.com/allure-framework
+
+
